@@ -24,7 +24,8 @@ def loginToDockerHub() {
 // Build Docker image
 def buildDockerImage() {
     echo "Building docker image..."
-    sh "docker build -t rolandstech/api-tests:latest ."
+    sh "docker pull rolandstech/api-tests:latest "
+    // sh "docker build -t rolandstech/api-tests:latest ."
 }
 
 // Push the image to DockerHub
