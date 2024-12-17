@@ -8,3 +8,4 @@ COPY tests tests
 RUN npm install
 
 ENTRYPOINT ["npm"]
+
