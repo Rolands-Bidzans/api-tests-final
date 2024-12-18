@@ -1,5 +1,8 @@
 pipeline {
     agent any
+        parameters {
+    	string(name: 'dockerhub_username', defaultValue: 'rolandstech', description: 'Dockerhub username')
+    }
     stages {
         stage('Build-docker-image') {
             steps {
@@ -24,12 +27,11 @@ def loginToDockerHub() {
 // Build Docker image
 def buildDockerImage() {
     echo "Building docker image..."
-    //bat "docker pull rolandstech/api-tests:latest "
-    bat "docker build -t rolandstech/api-tests:latest ."
+    bat "docker build -t ${params.dockerhub_username}/api-tests:latest ."
 }
 
 // Push the image to DockerHub
 def pushDockerImage() {
     echo "Pushing image to DockerHub..."
-    bat "docker push rolandstech/api-tests:latest"
+    bat "docker push ${params.dockerhub_username}/api-tests:latest"
 }
