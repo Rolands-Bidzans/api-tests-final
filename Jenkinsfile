@@ -17,12 +17,12 @@ pipeline {
 }
 
 // Login in to Docker hub
-def loginToDockerHub() {
-    withCredentials([usernamePassword(credentialsId: 'rolandstech-dockerhub', usernameVariable: 'DOCKERHUB_USR', passwordVariable: 'DOCKERHUB_PSW')]) {
-        echo "Logging in to DockerHub..."
-        bat "docker login -u $DOCKERHUB_USR -p $DOCKERHUB_PSW"
-    }
-}
+//def loginToDockerHub() {
+//    withCredentials([usernamePassword(credentialsId: 'rolandstech-dockerhub', usernameVariable: 'DOCKERHUB_USR', passwordVariable: 'DOCKERHUB_PSW')]) {
+//        echo "Logging in to DockerHub..."
+//        bat "docker login -u $DOCKERHUB_USR -p $DOCKERHUB_PSW"
+//    }
+//}
 
 // Build Docker image
 def buildDockerImage() {
