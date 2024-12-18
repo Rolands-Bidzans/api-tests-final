@@ -7,7 +7,7 @@ pipeline {
         stage('Build-docker-image') {
             steps {
                 script {
- 		    loginToDockerHub()
+ 		    // loginToDockerHub()
                     buildDockerImage()
                     pushDockerImage()
                 }
