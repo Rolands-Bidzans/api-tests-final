@@ -1,6 +1,9 @@
 pipeline {
     agent any
-        parameters {
+    triggers {
+    	githubPush()
+    }
+    Parameters {
     	string(name: 'dockerhub_username', defaultValue: 'rolandstech', description: 'Dockerhub username')
     }
     stages {
