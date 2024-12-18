@@ -3,7 +3,7 @@ pipeline {
     triggers {
     	githubPush()
     }
-    Parameters {
+    parameters {
     	string(name: 'dockerhub_username', defaultValue: 'rolandstech', description: 'Dockerhub username')
     }
     stages {
